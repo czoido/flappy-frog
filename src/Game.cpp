@@ -112,6 +112,12 @@ int Game::connect() {
 }
 
 int Game::loop() {
+    unsigned int windowFlags = SDL_WINDOW_SHOWN;
+    #ifdef IS_IOS
+        windowFlags |= SDL_WINDOW_BORDERLESS | SDL_WINDOW_FULLSCREEN;
+        SDL_SetHint(“SDL_HINT_ORIENTATIONS”, “Portrait”);
+    #endif
+
     SDL_Window *window = SDL_CreateWindow("Flappy Frog",
                                           SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);

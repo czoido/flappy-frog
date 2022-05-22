@@ -43,4 +43,4 @@ conan install .. -s build_type=Debug -pr:b=default -pr:h=../.conan/profiles/ios 
 cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake
 ```
 
-Open flappy-frog.xcodeproj and build.
+Open flappy-frog.xcodeproj and run the project in the simulator of your choice.

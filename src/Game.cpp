@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Platform.hpp"
 
 #include <iomanip>
 #include <iostream>
@@ -45,6 +46,7 @@ Game::Game() {
 
     if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) == -1) {
         std::cout << SDL_GetError() << std::endl;
+        return 0;
     }
 
     #ifdef IS_IOS

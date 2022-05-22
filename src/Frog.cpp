@@ -33,6 +33,7 @@ Frog::Frog(const b2Vec2& position, const World& world)
     jumpSound = Mix_LoadWAV("jump.wav");
     if(!jumpSound) {
         std::cout << SDL_GetError() << std::endl;
+        return 0;
     }
 }
 
@@ -41,6 +42,7 @@ void Frog::impulse() {
     if(Mix_PlayChannel(-1, jumpSound, 0) == -1) {
         std::cout << SDL_GetError() << std::endl;
         Mix_FreeChunk(jumpSound);
+        return 0;
     }
 }
 
